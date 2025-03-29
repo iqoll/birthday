@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <audio id="birthdayAudio" src="/aud.mp3"></audio>
   <div class="container">  
     <div class="photo-frame">
       <img src="baby.jpg" alt="Photo 1">
@@ -33,6 +32,8 @@
     </div>
     <!-- <div class="shadow"></div> -->
 
+    <audio id="birthdayAudio" src="aud.mp3" type="audio/mpeg"></audio>
+
     <div class="wishes">
       <p>Panjang umur sayang sehat selaluu!<br> 
       Semogaa semuaa impian kamu tercapai dann makin bahagia yaa 💖</p>
@@ -40,5 +41,15 @@
     </div>
     <script src="index.js"></script>
     <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      document.querySelector('.birthday').addEventListener('click', function() {
+          const audio = document.getElementById('birthdayAudio');
+          if (audio.paused) {
+              audio.play();
+          } else {
+              audio.pause(); // Jika ingin bisa dihentikan dengan klik kedua
+          }
+      });
+    </script>
 </body>
 </html>
